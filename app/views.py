@@ -17,7 +17,26 @@ from flask import render_template, request, redirect, url_for, flash
 def home():
     """Render website's home page."""
     return render_template('home.html')
-
+    
+    
+@app.route("/profile")
+def profile():
+    profile_info=
+    
+    {
+        'profile_url': url_for('static', filename='avatar.jpeg'),
+        'name': 'KOMOY HAYE',
+        'username': 'momo',
+        'location': 'Kingston, Jamaica',
+        'join': joined(),
+        'bio': "I am a warrior. Remember black is beautiful.",
+        'no_of_posts': '23',
+        'no_of_followers': '23',
+        'no_following': '23'
+        
+    }
+    return render_template('profile.html', userdata = profile_info),
+    
 
 @app.route('/about/')
 def about():
@@ -46,6 +65,11 @@ def add_header(response):
     response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
     response.headers['Cache-Control'] = 'public, max-age=0'
     return response
+    
+
+def joined():
+    return datetime.date(2018,2,2).strftime("%B, %Y")
+
 
 
 @app.errorhandler(404)

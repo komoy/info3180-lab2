@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div>
+                <div class="container">
+                     <image id="avatar" src = {{ profile_info["profile_url"] }} id = 'profile_pic'/>
+                </div>
+                <div class="container">
+                        <span id="name">{{profile_info["name"] }}</span>
+                    </div>
+                    <div class="container">
+                            <span id="username">{{profile_info["username"] }}</span>
+                    </div>
+                    <div class="container">
+                            <span id="fullname">{{profile_info["fullname"] }}</span>
+                        </div>
+                    <div class="container">
+                            <span id="join">{{profile_info["join"] }}</span>
+                        </div>
+            </div>
+
+                    <div class="bc_container">
+            <div class='row'>
+                
+                <div class="col">
+                    
+                    <span id="no_of_posts">{{profile_info['no_of_posts']}}</span>
+                    
+                    <label class='lower_card_label' for="no_of_posts">Posts</label>                    
+                </div>
+                
+                <div class="col">
+                    
+                    <span id="no_following">{{profile_info['no_following']}}</span>
+                    <label class='lower_card_label' for="no_following">Following</label>
+                </div>
+                <div class="col">
+                    <span id="no_of_followers">{{profile_info['no_of_followers']}}</span>
+                    <label class='lower_card_label' for="no_of_followers">Following</label>
+                </div>
+                
+                <div class="bottom">
+                    
+                    <label id="follow">Follow</label>
+                </div>
+            </div>
+
+        </div>
+
+	</div>
+</div>
+{% endblock %}
